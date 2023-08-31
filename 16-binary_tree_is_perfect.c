@@ -9,6 +9,7 @@ int binary_tree_is_perfect(const binary_tree_t *tree)
 {
 	int height_left = 0;
 	int height_right = 0;
+	int b;
 
 	/* Check if tree is NULL */
 	if (tree == NULL)
@@ -22,9 +23,8 @@ int binary_tree_is_perfect(const binary_tree_t *tree)
 	if (height_left != height_right)
 		return (0);
 
-	/* Recursively check if the left and right subtrees are perfect */
-	return (binary_tree_is_perfect(tree->left)\
-	&& binary_tree_is_perfect(tree->right));
+	b = binary_tree_is_perfect(tree->left);
+	return (b && binary_tree_is_perfect(tree->right));
 }
 
 /**
