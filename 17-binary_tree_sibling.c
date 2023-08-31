@@ -8,14 +8,14 @@
  */
 binary_tree_t *binary_tree_sibling(binary_tree_t *node)
 {
-    /* Check if node or its parent is NULL */
-    if (node == NULL || node->parent == NULL)
-        return (NULL);
+	/* Check if node or its parent is NULL */
+	if (node == NULL || node->parent == NULL)
+		return (NULL);
 
-    /* Check if node is the left child of its parent */
-    if (node->parent->left == node)
-        return (node->parent->right);
+	/* Check if node is the left child of its parent */
+	if (node->parent->left == node)
+		return (node->parent->right);
 
-    /* Node is the right child of its parent */
-    return (node->parent->left);
+	/* Node is the right child of its parent */
+	return (node->parent->left);
 }
